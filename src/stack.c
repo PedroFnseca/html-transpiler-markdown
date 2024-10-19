@@ -32,7 +32,7 @@ void print_stack(struct Stack *stack) {
   struct Node *current = stack->top;
   
   while (current != NULL) {
-    printf("%d\n", current->value);
+    printf("%s\n", current->value);
     current = current->next;
   }
 }
