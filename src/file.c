@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 int read_file(struct File file) {
-  FILE *f = fopen(file.path, "r");
+  FILE *f = fopen(file.path, READ);
 
   if (f == NULL) {
     printf("Error: file not found\n");
@@ -17,6 +17,21 @@ int read_file(struct File file) {
 
     file.content += character;
   }
+
+  fclose(f);
+
+  return 0;
+}
+
+int write_file(struct File file, char *content) {
+  FILE *f = fopen(file.path, WRITE);
+
+  if (f == NULL) {
+    printf("Error: file not found\n");
+    return 1;
+  }
+
+  fprintf(f, "%s", content);
 
   fclose(f);
 
