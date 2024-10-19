@@ -1,8 +1,9 @@
 #ifndef _FILE_H_
 #define _FILE_H_
+#include "stack.h"
 
 struct File {
-  char *content;
+  struct Stack *content;
   char *path;
 };
 
@@ -12,6 +13,6 @@ struct File {
 
 int read_file(struct File file);
 
-int write_file(struct File file, char *content);
+int write_file(struct File file, struct Stack *content);
 
 #endif

@@ -1,4 +1,5 @@
 #include "headers/file.h"
+#include "headers/stack.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -15,7 +16,7 @@ int read_file(struct File file) {
 
     printf("%c", character);
 
-    file.content += character;
+    // push(file.content, character);
   }
 
   fclose(f);
@@ -23,7 +24,7 @@ int read_file(struct File file) {
   return 0;
 }
 
-int write_file(struct File file, char *content) {
+int write_file(struct File file,  struct Stack *content) {
   FILE *f = fopen(file.path, WRITE);
 
   if (f == NULL) {
@@ -31,7 +32,7 @@ int write_file(struct File file, char *content) {
     return 1;
   }
 
-  fprintf(f, "%s", content);
+  // fprintf(f, "%s", content);
 
   fclose(f);
 
