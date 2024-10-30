@@ -3,7 +3,7 @@
 
 #include "stack.h"
 
-enum State {
+enum StateRead {
   NONE,
   OPEN_TAG,
   TAG,
@@ -14,7 +14,7 @@ enum State {
   TAG_END,
 };
 
-extern enum State STATE_READ;
+extern enum StateRead STATE_READ;
 
 int stateMachineRead(struct Stack stack, char c);
 

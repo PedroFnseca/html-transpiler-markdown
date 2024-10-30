@@ -1,7 +1,7 @@
 #include "headers/stack.h"
 #include "headers/read_state.h"
 
-enum State STATE_READ = NONE;
+enum StateRead STATE_READ = NONE;
 
 int stateMachineRead(struct Stack stack, char c) {
   //  STateManager
