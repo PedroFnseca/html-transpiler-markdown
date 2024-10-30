@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void push(struct Stack *stack, char *value) {
+void push(struct Stack *stack, char value) {
   struct Node *new_node = (struct Node *)malloc(sizeof(struct Node));
   
   new_node->value = value;
@@ -32,7 +32,7 @@ void print_stack(struct Stack *stack) {
   struct Node *current = stack->top;
   
   while (current != NULL) {
-    printf("%s\n", current->value);
+    printf("%c\n", current->value);
     current = current->next;
   }
 }

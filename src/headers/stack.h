@@ -2,7 +2,7 @@
 #define _STACK_H_
 
 struct Node {
-  char *value;
+  char value;
   struct Node *next;
 };
 
@@ -11,7 +11,7 @@ struct Stack {
   int size;
 };
 
-void push(struct Stack *stack, char *value);
+void push(struct Stack *stack, char value);
 
 struct Node pop(struct Stack *stack);
 
